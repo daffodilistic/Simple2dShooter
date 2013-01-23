@@ -64,32 +64,6 @@ void BulletPool::destroy()
 	delete instance;
 }
 
-void BulletPool::shoot(CCPoint _pos, CCPoint _velo, int _life)
-{
-	CCSize size = CCDirector::sharedDirector()->getWinSize();
-
-	/*
-	CCArray *bullets = bspritesheet->getChildren();
-    CCObject *object = bullets->objectAtIndex(next);
-    Bullet *bullet = (Bullet*) object;
-
-	bullet->setPosition(ccp(size.width * 0.5f, size.height * 0.5f));
-	bullet->setVelo(_velo);
-	bullet->setVisible(true);
-
-	CCLog("posx: %f , posy: %f", _pos.x, _pos.y);
-	CCLog("next: %i", next);
-	CCLog("count: %i", bspritesheet->getChildrenCount());
-
-	++ next;
-
-	if (next >= bspritesheet->getChildrenCount())
-	{
-        next = 0;
-    }
-	*/
-}
-
 void BulletPool::shoot(CCPoint _pos, CCPoint _velo)
 {
 	Bullet *bullet = (Bullet*) bullets->objectAtIndex(next);

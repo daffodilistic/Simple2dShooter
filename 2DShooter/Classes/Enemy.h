@@ -9,12 +9,33 @@ USING_NS_CC;
 class Enemy : public AbstractCharacter
 {
 public:
-	bool init();
-	void changeState(CHAR_STATE _cstate);
+	/* Static override method
+	   @param _framename: starting frame for sprite
+	   @param _spritesheet: reference to a texture
+	   @param _anim: animate sprite according to the given action (Put NULL if do not have)
+	*/
 	static Enemy* create(const char *_framename, CCSpriteBatchNode *_spritesheet, CCAction *_anim);
+
+	/* Initialise
+	*/
+	bool init();
+
+	/* Change state of enemy (temp)
+	   @param _cstate: state of enemy 
+	*/
+	void changeState(CHAR_STATE _cstate);
+
+	/* Updates
+	   @param dt: delta time
+	*/
 	void update(float dt);
 private:
+	/* Constructor
+	*/
 	Enemy();
+
+	/* Destructor
+	*/
 	~Enemy();
 };
 

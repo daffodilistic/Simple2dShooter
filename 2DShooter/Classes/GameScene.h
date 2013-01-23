@@ -11,10 +11,21 @@ USING_NS_CC;
 class GameScene : public CCScene
 {
 public:
+	/* Constructor
+	*/
 	GameScene();
+
+	/* Destructor
+	*/
 	~GameScene();
+
+	/* Initialise
+	*/
 	bool init();
+
+	/* Implement the "static node()" method manually
+	*/
 	CREATE_FUNC(GameScene);
 };
 
-#endif;
+#endif

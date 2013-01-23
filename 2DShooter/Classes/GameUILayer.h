@@ -8,12 +8,25 @@ USING_NS_CC;
 class GameUILayer : public CCLayer
 {
 public:
+	/* Constructor
+	*/
 	GameUILayer();
+
+	/* Destructor
+	*/
 	~GameUILayer();
+
+	/* Initialise
+	*/
 	bool init();
+
+	/* Implement the "static node()" method manually
+	*/
 	CREATE_FUNC(GameUILayer);
 
-	CCSprite *btn;
+	/* Sprite for button (temp)
+	*/
+	CC_SYNTHESIZE(CCSprite*, btn, Btn);
 };
 
-#endif;
+#endif

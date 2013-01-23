@@ -8,17 +8,45 @@ USING_NS_CC;
 class GameBGLayer : public CCLayer
 {
 public:
+	/* Constructor
+	*/
 	GameBGLayer();
+
+	/* Destructor
+	*/
 	~GameBGLayer();
+
+	/* Initialisation
+	*/
 	bool init();
+
+	/* Implement the "static node()" method manually
+	*/
 	CREATE_FUNC(GameBGLayer);
 
 private:
-	CCSprite *bgx1; 
-	CCSprite *bgx2; 
-	float bgoffsetx;
-	float bgoffsety;
+	/* First background sprite
+	*/
+	CC_SYNTHESIZE(CCSprite*, bgx1, Bgx1);
+
+	/* Second background sprite
+	*/
+	CC_SYNTHESIZE(CCSprite*, bgx2, Bgx2);
+
+	/* Background offset for x
+	*/
+	CC_SYNTHESIZE(float, bgoffsetx, Bgoffsetx);
+
+	/* Background offset for y
+	*/
+	CC_SYNTHESIZE(float, bgoffsety, Bgoffsety);
+
+	/* Initialise background
+	*/
 	void initBG();
+
+	/* Background scrolling
+	*/
 	void scrolling(CCObject *_sender);
 };
 
