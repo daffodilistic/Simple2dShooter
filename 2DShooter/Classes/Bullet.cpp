@@ -14,6 +14,7 @@ bool Bullet::init()
 	this->setPosition(CCPointZero);
 	this->setVelo(CCPointZero);
 	this->setAnchorPoint(ccp(0.5f, 0.5f));
+
 	return true;
 }
 

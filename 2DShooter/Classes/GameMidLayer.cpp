@@ -4,7 +4,8 @@ GameMidLayer::GameMidLayer()
 : player(NULL),
   istouching(false),
   isPressed(false),
-  UILayer(NULL)
+  UILayer(NULL),
+  enemy(NULL)
 {
 }
 
@@ -45,6 +46,8 @@ bool GameMidLayer::init()
 		player = Player::create("grossini_dance_01.png", spritesheet1, anim);
 		player->setPosition(ccp(size.width * 0.5f, size.height * 0.5f));
 		
+		enemy = Enemy::create("grossini_dance_03.png", spritesheet1, NULL);
+		enemy->setPosition(ccp(size.width - 10.0f, size.height * 0.5f));
 		///////////////////////////////////////////////////
 		
 		this->addChild(BulletPool::SharedBulletPool()->getBspritesheet(), 0);
@@ -66,7 +69,22 @@ void GameMidLayer::onEnter()
 
 void GameMidLayer::update(float dt)
 {
+	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	BulletPool::SharedBulletPool()->update(dt);
+	this->enemy->update(dt);
+
+	CCObject *it = NULL;
+	CCARRAY_FOREACH(BulletPool::SharedBulletPool()->getBullets(), it)
+	{
+		Bullet *bullet = (Bullet*) it;
+		if (enemy->boundingBox().containsPoint(bullet->getPosition()))
+		{
+			bullet->setPosition(CCPointZero);
+			bullet->setVelo(CCPointZero);
+			bullet->setVisible(false);
+			enemy->setPosition(ccp(size.width - 10.0f, size.height * 0.5f));
+		}
+	}
 }
 
 void GameMidLayer::onExit()

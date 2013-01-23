@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "GameUILayer.h"
 #include "BulletPool.h"
+#include "Enemy.h"
 
 USING_NS_CC;
 
@@ -29,6 +30,7 @@ private:
 	CC_SYNTHESIZE(bool, istouching, istouching);
 	CC_SYNTHESIZE(GameUILayer*, UILayer, UILayer);
 	CC_SYNTHESIZE(bool, isPressed, isPressed);
+	CC_SYNTHESIZE(Enemy*, enemy, enemy);
 };	
 
 #endif;

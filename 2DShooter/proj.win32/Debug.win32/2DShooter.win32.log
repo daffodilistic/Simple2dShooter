@@ -1,26 +1,15 @@
-﻿Build started 22/1/2013 5:38:16 PM.
+﻿Build started 23/1/2013 3:40:03 PM.
      1>Project "D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\2DShooter\proj.win32\2DShooter.win32.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /I..\Classes /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx\include" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx\kazmath\include" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx\platform\win32" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx\platform\third_party\win32" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx\platform\third_party\win32\OGLES" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\external" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\CocosDenshion\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\Bullet.cpp ..\Classes\BulletPool.cpp ..\Classes\GameManager.cpp ..\Classes\GameMidLayer.cpp ..\Classes\GameScene.cpp ..\Classes\MainMenuBtnLayer.cpp ..\Classes\MainMenuScene.cpp
-         Bullet.cpp
-         Generating Code...
-         Compiling...
-         AppDelegate.cpp
-         Generating Code...
-         Compiling...
-         MainMenuScene.cpp
-         MainMenuBtnLayer.cpp
-         GameScene.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /I..\Classes /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx\include" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx\kazmath\include" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx\platform\win32" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx\platform\third_party\win32" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\cocos2dx\platform\third_party\win32\OGLES" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\external" /I"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\CocosDenshion\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\GameMidLayer.cpp
          GameMidLayer.cpp
-         GameManager.cpp
-         BulletPool.cpp
-         Generating Code...
        Link:
          C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\Debug.win32\2DShooter.win32.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\Debug.win32\\" libcocos2d.lib opengl32.lib glew32.lib libBox2d.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\Debug.win32\2DShooter.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Cocos2d-x Windows\cocos2d-2.1beta3-x-2.1.0\Debug.win32\2DShooter.win32.lib" /MACHINE:X86 Debug.win32\2DShooter.res
          Debug.win32\AbstractCharacter.obj
          Debug.win32\AppDelegate.obj
          Debug.win32\Bullet.obj
          Debug.win32\BulletPool.obj
+         Debug.win32\Enemy.obj
          Debug.win32\GameBGLayer.obj
          Debug.win32\GameManager.obj
          Debug.win32\GameMidLayer.obj
@@ -37,4 +26,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:36.95
+Time Elapsed 00:00:06.00

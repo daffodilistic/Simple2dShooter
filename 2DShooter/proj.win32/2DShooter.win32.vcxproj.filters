@@ -121,6 +121,9 @@
     <ClInclude Include="..\Classes\BulletPool.h">
       <Filter>include\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Enemy.h">
+      <Filter>include\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -166,6 +169,9 @@
       <Filter>source\Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\BulletPool.cpp">
+      <Filter>source\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Enemy.cpp">
       <Filter>source\Objects</Filter>
     </ClCompile>
   </ItemGroup>
