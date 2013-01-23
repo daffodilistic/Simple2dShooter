@@ -1,0 +1,43 @@
+#ifndef __CONSTANTS_H_
+#define __CONSTANTS_H_
+
+// Scene id
+typedef enum
+{
+	SCENE_ID_NONE = -1,
+	SCENE_ID_MAINMENU,
+	SCENE_ID_PLAY,
+	SCENE_ID_SETTINGS,
+	SCENE_ID_ABOUT,
+	SCENE_ID_RESULTS,
+	SCENE_ID_QUIT
+} SCENE_ID;
+
+// Main menu id
+typedef enum
+{
+	MAINMENU_ID_NONE = -1,
+	MAINMENU_ID_START,
+	MAINMENU_ID_SETTING,
+	MAINMENU_ID_ABOUT,
+	MAINMENU_ID_QUIT
+} MAINMENU_ID;
+
+// Character states
+typedef enum
+{
+	CHAR_STATE_NONE = -1,
+	CHAR_STATE_SPAWN,
+	CHAR_STATE_SHOOT,
+	CHAR_STATE_DEAD
+} CHAR_STATE;
+
+typedef enum
+{
+	TYPE_ID_NONE = -1,
+	TYPE_ID_PLAYER,
+	TYPE_ID_ENEMY,
+	TYPE_ID_BG
+} TYPE_ID;
+
+#endif
