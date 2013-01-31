@@ -6,8 +6,11 @@
 #include "GameUILayer.h"
 #include "BulletPool.h"
 #include "Enemy.h"
+#include "GameManager.h"
 
 USING_NS_CC;
+
+#define TRANSITION_DURATION 1.2f 
 
 class GameMidLayer : public CCLayer
 {
@@ -32,6 +35,8 @@ public:
 	   @param dt: delta time
 	*/
 	void update(float dt);
+
+	void onEnterTransitionDidFinish();
 
 	/* When layer is removed
 	*/
@@ -65,7 +70,7 @@ public:
 private:
 	/* Player (user)
 	*/
-	CC_SYNTHESIZE (Player*, player, player);
+	CC_SYNTHESIZE(Player*, player, player);
 
 	/* Boolean to check if button is pressed
 	*/

@@ -5,6 +5,7 @@
 #include "Constants.h"
 #include "MainMenuScene.h"
 #include "GameScene.h"
+#include "GameOverScene.h"
 
 USING_NS_CC;
 
@@ -19,6 +20,10 @@ public:
 	  @param _sceneID: scene ID of current scene
 	*/
 	void runSceneWithID(SCENE_ID _sceneID);
+
+	void runSceneWithID(SCENE_ID _sceneID, TRANSITION_ID _tranID, int _time);
+
+	CCTransitionScene* createTransition(TRANSITION_ID _tranID, int _time, CCScene *_scene);
 
 	/* Current scene ID
 	*/

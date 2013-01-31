@@ -34,4 +34,8 @@ bool MainMenuBGLayer::init()
 	return bRet;
 }
 
+void MainMenuBGLayer::onExit()
+{
+	this->removeAllChildrenWithCleanup(true);
+}
 

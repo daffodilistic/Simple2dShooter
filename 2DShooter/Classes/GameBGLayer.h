@@ -20,6 +20,8 @@ public:
 	*/
 	bool init();
 
+	void onExit();
+
 	/* Implement the "static node()" method manually
 	*/
 	CREATE_FUNC(GameBGLayer);

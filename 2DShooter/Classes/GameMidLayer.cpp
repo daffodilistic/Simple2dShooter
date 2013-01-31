@@ -52,8 +52,8 @@ bool GameMidLayer::init()
 		
 		this->addChild(BulletPool::SharedBulletPool()->getBspritesheet(), 0);
 
-		this->scheduleUpdate();
-
+		//this->scheduleUpdate();
+			
 		bRet = true;
 	} while (0);
 
@@ -80,12 +80,26 @@ void GameMidLayer::update(float dt)
 		Bullet *bullet = (Bullet*) it;
 		if (enemy->boundingBox().containsPoint(bullet->getPosition()))
 		{
+			player->addPoints();
 			bullet->setPosition(CCPointZero);
 			bullet->setVelo(CCPointZero);
 			bullet->setVisible(false);
 			enemy->setPosition(ccp(size.width + 50.0f, rany));
 		}
 	}
+
+	if (player->getpoints() >= 5)
+	{
+		player->setpoints(0);
+		GameManager::SharedGameManager().runSceneWithID(SCENE_ID_RESTART, TRANSITION_ID_FADEWHITETRANSITION, TRANSITION_DURATION);
+	}
+}
+
+void GameMidLayer::onEnterTransitionDidFinish()
+{
+	CCLayer::onEnterTransitionDidFinish();
+
+	this->scheduleUpdate();
 }
 
 void GameMidLayer::onExit()
@@ -93,7 +107,8 @@ void GameMidLayer::onExit()
 	BulletPool::SharedBulletPool()->destroy();
 	player->destroy();
 	//enemy->destroy();
-	CCSpriteFrameCache::sharedSpriteFrameCache()->removeUnusedSpriteFrames();
+	//CCSpriteFrameCache::sharedSpriteFrameCache()->removeUnusedSpriteFrames();
+	this->removeAllChildrenWithCleanup(true);
 	CCLayer::onExit();
 }
 
@@ -111,7 +126,6 @@ void GameMidLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 		isPressed = true;
 		BulletPool::SharedBulletPool()->shoot(player->getPosition(), ccp(1000,0));
 	}
-
 }
 
 void GameMidLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)

@@ -64,7 +64,7 @@ void MainMenuBtnLayer::menucallback(CCObject *_sender)
 	
 	switch (tag)
 	{
-		case MAINMENU_ID_START: GameManager::SharedGameManager().runSceneWithID(SCENE_ID_PLAY); 
+		case MAINMENU_ID_START: GameManager::SharedGameManager().runSceneWithID(SCENE_ID_PLAY, TRANSITION_ID_CROSSFADE, TRANSITION_DURATION); 
 			break;
 		case MAINMENU_ID_SETTING: GameManager::SharedGameManager().runSceneWithID(SCENE_ID_SETTINGS); 
 			break; 
@@ -73,5 +73,10 @@ void MainMenuBtnLayer::menucallback(CCObject *_sender)
 		case MAINMENU_ID_QUIT: GameManager::SharedGameManager().runSceneWithID(SCENE_ID_QUIT); 
 			break;
 	}
+}
+
+void MainMenuBtnLayer::onExit()
+{
+	this->removeAllChildrenWithCleanup(true);
 }
 

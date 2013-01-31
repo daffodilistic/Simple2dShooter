@@ -24,3 +24,8 @@ bool MainMenuScene::init()
 
 	return bRet;
 }
+
+void MainMenuScene::onExit()
+{
+	this->removeAllChildrenWithCleanup(true);
+}

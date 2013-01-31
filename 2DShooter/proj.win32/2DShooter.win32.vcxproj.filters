@@ -31,6 +31,12 @@
     <Filter Include="source\Objects">
       <UniqueIdentifier>{cfb1f962-41f4-48df-a9e7-f8f39305a0b6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Game Over">
+      <UniqueIdentifier>{468d51c1-6dcf-40c9-b84e-df3d987e3076}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Game Over">
+      <UniqueIdentifier>{291083ee-3242-4cd4-ab60-4b11e09786ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\2DShooter.ico">
@@ -61,6 +67,12 @@
       <Filter>resource</Filter>
     </Image>
     <Image Include="..\Resources\bullet.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\GameOverSheet.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\Restart_buttons.png">
       <Filter>resource</Filter>
     </Image>
   </ItemGroup>
@@ -124,6 +136,15 @@
     <ClInclude Include="..\Classes\Enemy.h">
       <Filter>include\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\GameOverScene.h">
+      <Filter>include\Game Over</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOverBtnLayer.h">
+      <Filter>include\Game Over</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOverBGLayer.h">
+      <Filter>include\Game Over</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -174,12 +195,27 @@
     <ClCompile Include="..\Classes\Enemy.cpp">
       <Filter>source\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameOverScene.cpp">
+      <Filter>source\Game Over</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameOverBGLayer.cpp">
+      <Filter>source\Game Over</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameOverBtnLayer.cpp">
+      <Filter>source\Game Over</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resources\grossini-aliases.plist">
       <Filter>resource</Filter>
     </None>
     <None Include="..\Resources\bullet.plist">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\GameOverSheet.plist">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\Restart_buttons.plist">
       <Filter>resource</Filter>
     </None>
   </ItemGroup>

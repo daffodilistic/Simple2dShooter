@@ -7,6 +7,8 @@
 
 USING_NS_CC;
 
+#define TRANSITION_DURATION 1.2f
+
 class MainMenuBtnLayer : public CCLayer
 {
 public:
@@ -21,6 +23,8 @@ public:
 	/* Initialise
 	*/
 	bool init();
+
+	void onExit();
 	
 	/* Implement the "static node()" method manually
 	*/

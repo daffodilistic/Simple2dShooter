@@ -19,7 +19,7 @@ public:
 	*/
 	~AbstractCharacter();
 	
-	/* Initilise character 
+	/* Initialise character 
 	  @param _framename: starting frame for sprite
 	  @param _spritesheet: reference to a texture
 	  @param _anim: animate sprite according to the given action (Put NULL if do not have)

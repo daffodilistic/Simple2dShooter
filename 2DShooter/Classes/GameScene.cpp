@@ -31,3 +31,8 @@ bool GameScene::init()
 
 	return bRet;
 }
+
+void GameScene::onExit()
+{
+	this->removeAllChildrenWithCleanup(true);
+}

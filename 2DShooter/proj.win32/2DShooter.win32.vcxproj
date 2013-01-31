@@ -123,9 +123,11 @@
     <Image Include="..\Resources\Buttons.png" />
     <Image Include="..\Resources\CloseNormal.png" />
     <Image Include="..\Resources\CloseSelected.png" />
+    <Image Include="..\Resources\GameOverSheet.png" />
     <Image Include="..\Resources\grossini-aliases.png" />
     <Image Include="..\Resources\HelloWorld.png" />
     <Image Include="..\Resources\Logo.png" />
+    <Image Include="..\Resources\Restart_buttons.png" />
     <Image Include="..\Resources\UIButton.png" />
     <Image Include="res\2DShooter.ico" />
   </ItemGroup>
@@ -142,6 +144,9 @@
     <ClInclude Include="..\Classes\GameBGLayer.h" />
     <ClInclude Include="..\Classes\GameManager.h" />
     <ClInclude Include="..\Classes\GameMidLayer.h" />
+    <ClInclude Include="..\Classes\GameOverBGLayer.h" />
+    <ClInclude Include="..\Classes\GameOverBtnLayer.h" />
+    <ClInclude Include="..\Classes\GameOverScene.h" />
     <ClInclude Include="..\Classes\GameUILayer.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\MainMenuBGLayer.h" />
@@ -161,6 +166,9 @@
     <ClCompile Include="..\Classes\GameBGLayer.cpp" />
     <ClCompile Include="..\Classes\GameManager.cpp" />
     <ClCompile Include="..\Classes\GameMidLayer.cpp" />
+    <ClCompile Include="..\Classes\GameOverBGLayer.cpp" />
+    <ClCompile Include="..\Classes\GameOverBtnLayer.cpp" />
+    <ClCompile Include="..\Classes\GameOverScene.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\GameUILayer.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
@@ -172,7 +180,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resources\bullet.plist" />
+    <None Include="..\Resources\GameOverSheet.plist" />
     <None Include="..\Resources\grossini-aliases.plist" />
+    <None Include="..\Resources\Restart_buttons.plist" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

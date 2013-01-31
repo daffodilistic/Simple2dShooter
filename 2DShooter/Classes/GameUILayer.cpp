@@ -30,3 +30,8 @@ bool GameUILayer::init()
 
 	return bRet;
 }
+
+void GameUILayer::onExit()
+{
+	this->removeAllChildrenWithCleanup(true);
+}

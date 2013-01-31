@@ -2,7 +2,6 @@
 
 Player::Player()
 {
-	moveaction = NULL;
 }
 
 Player::~Player()
@@ -15,6 +14,8 @@ bool Player::init()
 	hp = 5;
 	speed = 1000.0f;
 	name = NULL;
+	moveaction = NULL;
+	points = 0;
 
 	return true;
 }
@@ -52,6 +53,12 @@ Player*  Player::create(const char* _framename, CCSpriteBatchNode *_spritesheet,
 
     CC_SAFE_DELETE(player);
 	return NULL;
+}
+
+
+void Player::addPoints()
+{
+	points ++;
 }
 
 void Player::setMove(CCPoint _pos)

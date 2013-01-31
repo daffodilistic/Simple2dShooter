@@ -69,3 +69,8 @@ void GameBGLayer::scrolling(CCObject *_sender)
 		node->runAction(scrollAction);
 	}
 }
+
+void GameBGLayer::onExit()
+{
+	this->removeAllChildrenWithCleanup(true);
+}
