@@ -48,6 +48,7 @@ bool GameMidLayer::init()
 		
 		enemy = Enemy::create("grossini_dance_03.png", spritesheet1, NULL);
 		enemy->setPosition(ccp(size.width + 50.0f, size.height * 0.5f));
+		
 		///////////////////////////////////////////////////
 		
 		this->addChild(BulletPool::SharedBulletPool()->getBspritesheet(), 0);
@@ -78,14 +79,26 @@ void GameMidLayer::update(float dt)
 	CCARRAY_FOREACH(BulletPool::SharedBulletPool()->getBullets(), it)
 	{
 		Bullet *bullet = (Bullet*) it;
-		if (enemy->boundingBox().containsPoint(bullet->getPosition()))
+		if (bullet->isVisible())
 		{
-			player->addPoints();
-			bullet->setPosition(CCPointZero);
-			bullet->setVelo(CCPointZero);
-			bullet->setVisible(false);
-			enemy->setPosition(ccp(size.width + 50.0f, rany));
+			if (enemy->boundingBox().containsPoint(bullet->getPosition()))
+			{
+				player->addPoints();
+				bullet->setPosition(CCPointZero);
+				bullet->setVelo(CCPointZero);
+				bullet->setVisible(false);
+				enemy->stopAllActions();
+				enemy->setPosition(ccp(size.width + 50.0f, rany));
+				enemy->startaction();
+			}
 		}
+	}
+
+	if (enemy->getPositionX() <= 0)
+	{
+		enemy->stopAllActions();
+		enemy->setPosition(ccp(size.width + 50.0f, rany));
+		enemy->startaction();
 	}
 
 	if (player->getpoints() >= 5)
@@ -118,7 +131,7 @@ void GameMidLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 	CCPoint position = touch->getLocation();
 	
 	istouching = true;
-	//player->setMove(position);
+
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	if (UILayer->getBtn()->boundingBox().containsPoint(position))
 	{
@@ -135,7 +148,6 @@ void GameMidLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 	
 	if (istouching)
 	{
-		//player->setPosition(position);
 		player->setMove(position);
 	}
 }

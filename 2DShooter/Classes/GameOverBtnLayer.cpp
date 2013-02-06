@@ -21,7 +21,6 @@ bool GameOverBtnLayer::init()
 
 		CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Restart_buttons.plist");
 		
-		
 		spritesheet = CCSpriteBatchNode::create("Restart_buttons.png");
 		this->addChild(spritesheet, -1);
 

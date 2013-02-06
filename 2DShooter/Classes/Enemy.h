@@ -2,6 +2,7 @@
 #define __ENEMY_H_
 
 #include "cocos2d.h"
+#include "Box2D\Box2D.h"
 #include "AbstractCharacter.h"
 
 USING_NS_CC;
@@ -19,6 +20,10 @@ public:
 	/* Initialise
 	*/
 	bool init();
+
+	/* Run jump action
+	*/
+	void startaction();
 
 	/* Change state of enemy (temp)
 	   @param _cstate: state of enemy 

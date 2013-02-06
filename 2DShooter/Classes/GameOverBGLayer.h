@@ -9,12 +9,28 @@ USING_NS_CC;
 class GameOverBGLayer : public CCLayer
 {
 public:
+	/* Constructor
+	*/
 	GameOverBGLayer();
+	
+	/* Destructor
+	*/
 	~GameOverBGLayer();
+
+	/* Initialise
+	*/
 	bool init();
+
+	/* When exiting layer
+	*/ 
 	void onExit();
+
+	/* Implement the "static node()" method manually
+	*/
 	CREATE_FUNC(GameOverBGLayer);
+
 private:
+
 	CC_SYNTHESIZE_READONLY(CCSpriteBatchNode*, spritesheet, spritesheet);
 };
 

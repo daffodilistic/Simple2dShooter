@@ -10,8 +10,9 @@ Enemy::~Enemy()
 
 bool Enemy::init()
 {
-	this->setPosition(CCPointZero);
 	this->setAnchorPoint(ccp(0.5f,0.5f));
+	CCActionInterval *actionBy = CCJumpBy::create(2.0f, ccp(-360,0), 50, 4);
+	this->runAction(CCRepeatForever::create(actionBy));
 
 	return true;
 }
@@ -39,5 +40,13 @@ void Enemy::update(float dt)
 {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 
-	this->setPosition(ccpAdd(this->getPosition(), ccpMult(ccp(-100,0), dt)));
+	//this->setPosition(ccpAdd(this->getPosition(), ccpMult(ccp(-100,0), dt)));
+
+	CCLog("%f, %f, %f", this->getPosition().x, this->getPosition().y, dt);
+}
+
+void Enemy::startaction()
+{
+	CCActionInterval *actionBy = CCJumpBy::create(2.0f, ccp(-360,0), 50, 4);
+	this->runAction(CCRepeatForever::create(actionBy));
 }

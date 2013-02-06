@@ -100,10 +100,7 @@ void GameManager::runSceneWithID(SCENE_ID _sceneID, TRANSITION_ID _tranID, int _
 			break;
 		case SCENE_ID_RESTART: sceneToRun = GameOverScene::create();
 			break;
-		case SCENE_ID_QUIT: CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile("bullet.plist");
-							CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile("grossini-aliases.plist");
-							CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile("GameOverSheet.plist");
-							CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile("Restart_buttons.plist");
+		case SCENE_ID_QUIT: CCSpriteFrameCache::sharedSpriteFrameCache()->purgeSharedSpriteFrameCache();
 							CCDirector::sharedDirector()->end(); 	
 			break;
 		default: CCLOG("Unknown");

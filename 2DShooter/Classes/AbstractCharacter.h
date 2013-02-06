@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "Constants.h"
+#include "Box2D\Box2D.h"
 #include <string.h>
 
 USING_NS_CC;
@@ -59,6 +60,7 @@ protected:
 	/* Sprite sheet
 	*/
 	CC_SYNTHESIZE(CCSpriteBatchNode*, spritesheet, spritesheet);
+
 
 };
 

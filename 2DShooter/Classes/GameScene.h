@@ -23,6 +23,8 @@ public:
 	*/
 	bool init();
 
+	/* When exiting scene
+	*/
 	void onExit();
 
 	/* Implement the "static node()" method manually

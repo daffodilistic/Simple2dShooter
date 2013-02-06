@@ -24,6 +24,8 @@ public:
 	*/
 	bool init();
 
+	/* When exiting layer
+	*/
 	void onExit();
 	
 	/* Implement the "static node()" method manually

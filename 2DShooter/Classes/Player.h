@@ -29,6 +29,8 @@ public:
 	*/
 	void setMove(CCPoint _pos);
 
+	/* Adds point
+	*/
 	void addPoints();
 
 private:
@@ -40,7 +42,10 @@ private:
 	*/
 	~Player();
 
+	/* Points
+	*/
 	CC_SYNTHESIZE(int, points, points);
+
 	CCAction *moveaction;
 
 };
