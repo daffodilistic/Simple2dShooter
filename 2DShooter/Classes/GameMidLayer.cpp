@@ -26,13 +26,31 @@ bool GameMidLayer::init()
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
 
 		CCSpriteFrameCache *cache = CCSpriteFrameCache::sharedSpriteFrameCache();
+		cache->addSpriteFramesWithFile("SPR_Nian.plist");
 		cache->addSpriteFramesWithFile("grossini-aliases.plist");
-		
+
 		CCSpriteBatchNode *spritesheet1 =  CCSpriteBatchNode::create("grossini-aliases.png");
+		CCSpriteBatchNode *spr_NianMonster =  CCSpriteBatchNode::create("SPR_Nian.png");
 		this->addChild(spritesheet1,1);
+		this->addChild(spr_NianMonster,1);
 
 		CCArray* animFrames = CCArray::createWithCapacity(15);
     
+		CCArray* animFrames_NianMonster = CCArray::createWithCapacity(2);
+    
+		CCLog("%s => SpriteBatchNode children count: %i", __FUNCTION__, spr_NianMonster->getChildrenCount());
+
+		for(int i = 0; i < 1; i++)
+		{
+			// Use exact name as in PLIST file if alias does not exist
+			CCString* str = CCString::createWithFormat("Nian%02d.png", i);
+			CCSpriteFrame *frame = cache->spriteFrameByName(str->getCString());
+			animFrames_NianMonster->addObject(frame);
+		}
+
+		CCAnimation *animation_NianMonster = CCAnimation::createWithSpriteFrames(animFrames_NianMonster, 0.3f);
+		CCAction *anim2 = CCRepeatForever::create(CCAnimate::create(animation_NianMonster));
+
 		for(int i = 1; i < 15; i++)
 		{
 			CCString* str = CCString::createWithFormat("dance_%02d", i);
@@ -46,9 +64,10 @@ bool GameMidLayer::init()
 		player = Player::create("grossini_dance_01.png", spritesheet1, anim);
 		player->setPosition(ccp(size.width * 0.5f, size.height * 0.5f));
 		
-		enemy = Enemy::create("grossini_dance_03.png", spritesheet1, NULL);
-		enemy->setPosition(ccp(size.width + 50.0f, size.height * 0.5f));
-		
+		enemy = Enemy::create("Nian00.png", spr_NianMonster, NULL);
+		enemy->setPosition(ccp(size.width + 50.0f, enemy->getHeight()));
+		enemy->setFlipX(true);
+
 		///////////////////////////////////////////////////
 		
 		this->addChild(BulletPool::SharedBulletPool()->getBspritesheet(), 0);
@@ -70,11 +89,9 @@ void GameMidLayer::onEnter()
 
 void GameMidLayer::update(float dt)
 {
-	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	BulletPool::SharedBulletPool()->update(dt);
 	this->enemy->update(dt);
-
-	int rany = rand() % (int)(size.height - enemy->getContentSize().height) + (0 + enemy->getContentSize().height);
+	
 	CCObject *it = NULL;
 	CCARRAY_FOREACH(BulletPool::SharedBulletPool()->getBullets(), it)
 	{
@@ -87,18 +104,15 @@ void GameMidLayer::update(float dt)
 				bullet->setPosition(CCPointZero);
 				bullet->setVelo(CCPointZero);
 				bullet->setVisible(false);
-				enemy->stopAllActions();
-				enemy->setPosition(ccp(size.width + 50.0f, rany));
-				enemy->startaction();
+				this->spawnNewEnemy();
 			}
 		}
 	}
 
+	// If enemy goes off screen, spawn a new one.
 	if (enemy->getPositionX() <= 0)
 	{
-		enemy->stopAllActions();
-		enemy->setPosition(ccp(size.width + 50.0f, rany));
-		enemy->startaction();
+		this->spawnNewEnemy();
 	}
 
 	if (player->getpoints() >= 5)
@@ -106,6 +120,25 @@ void GameMidLayer::update(float dt)
 		player->setpoints(0);
 		GameManager::SharedGameManager().runSceneWithID(SCENE_ID_RESTART, TRANSITION_ID_FADEWHITETRANSITION, TRANSITION_DURATION);
 	}
+}
+
+void GameMidLayer::spawnNewEnemy()
+{
+	CCSize size = CCDirector::sharedDirector()->getWinSize();
+
+	// TODO: Read http://c-faq.com/lib/randrange.html for a fix. Perhaps use a Mersenne-Twister lib?
+	//int enemyHeight  = rand() % (int) (enemy->getHeight());
+	
+	//CCLog("enemy height is %f", enemy->getHeight());
+
+	int rany = rand() % ((int) (enemy->getHeight()));
+
+	// __func__ is supposed to be C99 Standard, but as usual, Micro$oft "Changes Everything"
+	CCLog("%s => new random position: %i", __FUNCTION__, rany);
+
+	enemy->stopAllActions();
+	enemy->setPosition(ccp(size.width + 50.0f, rany));
+	enemy->startaction();
 }
 
 void GameMidLayer::onEnterTransitionDidFinish()

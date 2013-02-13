@@ -40,6 +40,12 @@ public:
 	*/
 	CCRect getRect();
 
+	/* Get sprite width and height
+	*/
+	float getWidth();
+
+	float getHeight();
+
 protected:
 	/* Hit points
 	*/

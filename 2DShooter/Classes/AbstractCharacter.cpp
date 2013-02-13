@@ -36,6 +36,16 @@ CCRect AbstractCharacter::getRect()
 					  this->getContentSize().height);
 }
 
+float AbstractCharacter::getWidth()
+{
+	return this->boundingBox().size.width;
+}
+
+float AbstractCharacter::getHeight()
+{
+	return this->boundingBox().size.height;
+}
+
 void AbstractCharacter::destroy()
 {
 	this->stopAllActions();

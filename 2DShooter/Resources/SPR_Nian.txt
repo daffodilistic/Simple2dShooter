@@ -1,0 +1,106 @@
+Simple plain text exporter for demo purposes
+
+See http://www.grantlee.org/apidox/for_themers.html for more information
+
+
+Texture data:
+    texture.width  = 512
+    texture.height = 512
+
+    texture.trimmedName = SPR_Nian
+    texture.fullName = SPR_Nian.png
+    texture.absoluteFileName = C:/Users/Soh Thiam Hing/Desktop/Simple2dShooter/2DShooter/Resources/SPR_Nian.png
+
+SmartUpdateHash: $TexturePacker:SmartUpdate:ada80062bfd0c0f1020d485340d0a44d$
+
+Sprite data:
+
+There are 2 variants:
+- sprites - contains the sprites, aliases are available in the
+  aliasList property and are not added top level
+
+- allSprites - list of all sprites
+
+Load javascript filter plugin, must be located in the exporter's folder in a subfolder
+grantlee/0.2/makecssselector.qs
+
+
+// set width & height for calculations using the javascript filter
+
+
+
+
+    =========================================================================
+
+    Use the javascript filter plugin to replace -hover with :hover
+    Nian.png
+
+    -- name without image type extension
+    sprite.trimmedName      = Nian
+
+    -- name with image extension
+    sprite.fullName         = Nian.png
+
+    -- offset of the center of the trimmed sprite from the
+    -- center of the original sprite (used by cocos2d)
+    sprite.absoluteOffset.x = 
+    sprite.absoluteOffset.y = 
+
+    -- list of alias sprites for this one
+    sprite.aliasList = 
+
+    --- frame rectangle with pixel coordinates
+    sprite.frameRect.x = 0
+    sprite.frameRect.y = 0
+    sprite.frameRect.width = 512
+    sprite.frameRect.height = 512
+
+    --- frame rectangle with uv coordinates (0..1)
+    sprite.frameRectRel.x = 0
+    sprite.frameRectRel.y = 0
+    sprite.frameRectRel.width = 1
+    sprite.frameRectRel.height = 1
+
+    --- frame rectangle with uv coordinates (0..1) calculated through JS
+    sprite.frameRectRel.x = 0
+    sprite.frameRectRel.y = 0
+    sprite.frameRectRel.width = 1
+    sprite.frameRectRel.height = 1
+
+    --- version of the frame rect with "original" width and height
+    sprite.frameRectWithoutRotation.x = 0
+    sprite.frameRectWithoutRotation.y = 0
+    sprite.frameRectWithoutRotation.width = 512
+    sprite.frameRectWithoutRotation.height = 512
+
+    -- true if the sprite was rotated
+    sprite.rotated        = false
+
+    -- true if the sprite was trimmed
+    sprite.trimmed        = false
+
+    sprite.sourceRect.x = 0
+    sprite.sourceRect.y = 0
+    sprite.sourceRect.width = 512
+    sprite.sourceRect.height = 512
+
+    sprite.cornerOffset.x = 0
+    sprite.cornerOffset.y = 0
+
+    sprite.untrimmedSize.width = 512
+    sprite.untrimmedSize.height = 512
+
+    -- the file absolute file name of the sprite
+    sprite.fileData.absoluteFileName = C:/Users/Soh Thiam Hing/Desktop/Simple2dShooter/2DShooter/Assets/Nian.png
+
+    -- the modification date of the sprite
+    sprite.fileData.lastModified = 2013-02-11T23:21:31
+
+    -- the creation date of the sprite
+    sprite.fileData.created = 2013-02-11T23:21:29
+
+    -- the file size of the sprite
+    sprite.fileData.fileSize = 339397
+
+
+

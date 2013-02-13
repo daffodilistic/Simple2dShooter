@@ -12,7 +12,7 @@ bool Player::init()
 {
 	state = CHAR_STATE_NONE;
 	hp = 5;
-	speed = 1000.0f;
+	speed = 10.0f;
 	name = NULL;
 	moveaction = NULL;
 	points = 0;
@@ -75,7 +75,8 @@ void Player::setMove(CCPoint _pos)
 	float finaldest = ccpLength(movediff);
 	float moveDuration = finaldest / speed;
 
-	moveaction = CCMoveTo::actionWithDuration(moveDuration, _pos);
+	//moveaction = CCMoveTo::actionWithDuration(moveDuration, _pos);
+	moveaction = CCMoveTo::create(moveDuration, _pos);
 	this->runAction(moveaction);
 
 }

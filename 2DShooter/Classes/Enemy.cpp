@@ -42,7 +42,7 @@ void Enemy::update(float dt)
 
 	//this->setPosition(ccpAdd(this->getPosition(), ccpMult(ccp(-100,0), dt)));
 
-	CCLog("%f, %f, %f", this->getPosition().x, this->getPosition().y, dt);
+	//CCLog("%f, %f, %f", this->getPosition().x, this->getPosition().y, dt);
 }
 
 void Enemy::startaction()

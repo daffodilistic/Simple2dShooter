@@ -75,6 +75,9 @@
     <Image Include="..\Resources\Restart_buttons.png">
       <Filter>resource</Filter>
     </Image>
+    <Image Include="..\Resources\SPR_Nian.png">
+      <Filter>resource</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2DShooter.rc">
@@ -216,6 +219,9 @@
       <Filter>resource</Filter>
     </None>
     <None Include="..\Resources\Restart_buttons.plist">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\SPR_Nian.plist">
       <Filter>resource</Filter>
     </None>
   </ItemGroup>

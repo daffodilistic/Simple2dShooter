@@ -63,6 +63,10 @@ public:
 	*/
 	void SetUILayer(GameUILayer *_uilayer);
 
+	/* Spawns a new enemy
+	*/
+	void spawnNewEnemy();
+
 	/* Implement the "static node()" method manually
 	*/
 	CREATE_FUNC(GameMidLayer);

@@ -128,6 +128,7 @@
     <Image Include="..\Resources\HelloWorld.png" />
     <Image Include="..\Resources\Logo.png" />
     <Image Include="..\Resources\Restart_buttons.png" />
+    <Image Include="..\Resources\SPR_Nian.png" />
     <Image Include="..\Resources\UIButton.png" />
     <Image Include="res\2DShooter.ico" />
   </ItemGroup>
@@ -183,6 +184,7 @@
     <None Include="..\Resources\GameOverSheet.plist" />
     <None Include="..\Resources\grossini-aliases.plist" />
     <None Include="..\Resources\Restart_buttons.plist" />
+    <None Include="..\Resources\SPR_Nian.plist" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
