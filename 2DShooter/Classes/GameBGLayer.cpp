@@ -32,19 +32,19 @@ void GameBGLayer::initBG()
 	 CCSize size = CCDirector::sharedDirector()->getWinSize();
 
 	// First background
-	bgx1 = CCSprite::create("GameBG.png");
+	bgx1 = CCSprite::create("background.jpg");
 	bgx1->setAnchorPoint(ccp(0.5f, 0.5f));
 	bgx1->setPosition(ccp(size.width * 0.5f, size.height * 0.5f));
 
 	// Offsets
 	bgoffsetx = (size.width * 1.5f) - 1.0f; 
 	bgoffsety = (size.height * 1.5f) - 1.0f;
-
+	
 	// Second background
 	bgx2 = CCSprite::createWithTexture(bgx1->getTexture());
 	bgx2->setAnchorPoint(ccp(0.5f, 0.5f));
 	bgx2->setPosition(ccp(bgoffsetx, size.height * 0.5f)); 
-
+	
 	this->addChild(bgx1, 0);
 	this->addChild(bgx2, 0);
 }

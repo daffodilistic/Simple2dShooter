@@ -1,4 +1,5 @@
 #include "MainMenuBtnLayer.h"
+#include "SimpleAudioEngine.h"
 
 MainMenuBtnLayer::MainMenuBtnLayer()
 {
@@ -29,6 +30,7 @@ bool MainMenuBtnLayer::init()
 																   CCSprite::createWithTexture(menuTexture, CCRectMake(6, 70, 166, 28)),
 																   this, menu_selector (MainMenuBtnLayer::menucallback));
 		startgameitem->setTag(MAINMENU_ID_START);
+		/*
 		CCMenuItemSprite *settings = CCMenuItemSprite::create(CCSprite::createWithTexture(menuTexture, CCRectMake(188, 2, 166, 28)),
 																   CCSprite::createWithTexture(menuTexture, CCRectMake(188, 35, 166, 28)),
 																   CCSprite::createWithTexture(menuTexture, CCRectMake(188, 70, 166, 28)),
@@ -44,8 +46,9 @@ bool MainMenuBtnLayer::init()
 																   CCSprite::createWithTexture(menuTexture, CCRectMake(552, 70, 166, 28)),
 																   this, menu_selector (MainMenuBtnLayer::menucallback));
 		quit->setTag(MAINMENU_ID_QUIT);
-		
-		CCMenu *menu = CCMenu::create(startgameitem, settings, about, quit, NULL);
+		*/
+
+		CCMenu *menu = CCMenu::create(startgameitem, /*settings, about, quit,*/ NULL);
 		menu->alignItemsVerticallyWithPadding(10);
 		menu->setPosition(ccp(size.width * 0.5f, size.height * 0.5f));
 		this->addChild(menu);
@@ -64,7 +67,9 @@ void MainMenuBtnLayer::menucallback(CCObject *_sender)
 	
 	switch (tag)
 	{
-		case MAINMENU_ID_START: GameManager::SharedGameManager().runSceneWithID(SCENE_ID_PLAY, TRANSITION_ID_CROSSFADE, TRANSITION_DURATION); 
+		case MAINMENU_ID_START:
+			CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("menu_start.wav");
+			GameManager::SharedGameManager().runSceneWithID(SCENE_ID_PLAY, TRANSITION_ID_CROSSFADE, TRANSITION_DURATION); 
 			break;
 		case MAINMENU_ID_SETTING: GameManager::SharedGameManager().runSceneWithID(SCENE_ID_SETTINGS); 
 			break; 

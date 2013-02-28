@@ -77,6 +77,7 @@ void Player::setMove(CCPoint _pos)
 
 	//moveaction = CCMoveTo::actionWithDuration(moveDuration, _pos);
 	moveaction = CCMoveTo::create(moveDuration, _pos);
+	moveaction->setTag(TAGS_ACTION::ACTION_MOVE);
 	this->runAction(moveaction);
 
 }

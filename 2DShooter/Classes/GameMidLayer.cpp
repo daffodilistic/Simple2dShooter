@@ -21,6 +21,7 @@ bool GameMidLayer::init()
 	{
 		// Super init first
 		CC_BREAK_IF(!CCLayer::init());
+
 		// Add layers here
 		
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
@@ -74,10 +75,22 @@ bool GameMidLayer::init()
 
 		//this->scheduleUpdate();
 			
+		// Init physics
+
+		this->createSpace();
+
 		bRet = true;
 	} while (0);
 
 	return bRet;
+}
+
+void GameMidLayer::createSpace()
+{
+	m_pSpace = cpSpaceNew();
+	m_pSpace->gravity = cpv(0, -100);
+
+	m_debugNode = CCPhysicsDebugNode::create(m_pSpace);
 }
 
 void GameMidLayer::onEnter()
@@ -181,7 +194,15 @@ void GameMidLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 	
 	if (istouching)
 	{
-		player->setMove(position);
+		//CCRect * touchArea = &CCRectMake(player->boundingBox.getPositionX(), player->boundingBox.getPositionY(), player->getContentSize().width, player->getContentSize().height);
+		if (player->getRect().containsPoint(position) == false)
+		{
+			player->setMove(position);
+		}
+		else
+		{
+			player->stopActionByTag(TAGS_ACTION::ACTION_MOVE);
+		}
 	}
 }
 

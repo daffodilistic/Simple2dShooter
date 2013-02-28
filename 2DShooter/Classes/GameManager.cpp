@@ -103,7 +103,7 @@ void GameManager::runSceneWithID(SCENE_ID _sceneID, TRANSITION_ID _tranID, int _
 		case SCENE_ID_QUIT: CCSpriteFrameCache::sharedSpriteFrameCache()->purgeSharedSpriteFrameCache();
 							CCDirector::sharedDirector()->end(); 	
 			break;
-		default: CCLOG("Unknown");
+		default: CCLOG("Unknown scene!");
 			break;
 	}
 	

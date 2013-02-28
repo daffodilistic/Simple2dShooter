@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "SimpleAudioEngine.h"
 
 GameScene::GameScene()
 {
@@ -26,6 +27,9 @@ bool GameScene::init()
 
 		this->addChild(midlayer, 1);
 		this->addChild(uilayer, 2);
+
+		//CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("PT_333884_lowres.mp3", true);
+
 		bRet = true;
 	} while (0);
 

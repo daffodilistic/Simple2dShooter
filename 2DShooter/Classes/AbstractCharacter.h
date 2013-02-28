@@ -9,6 +9,11 @@
 USING_NS_CC;
 using namespace std;
 
+typedef enum
+{
+	ACTION_MOVE = kCCActionTagInvalid + 1,
+} TAGS_ACTION;
+
 class AbstractCharacter : public CCSprite
 {
 public:

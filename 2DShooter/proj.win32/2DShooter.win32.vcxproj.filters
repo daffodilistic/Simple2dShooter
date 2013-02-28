@@ -85,68 +85,68 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameManager.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Constants.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MainMenuBGLayer.h">
-      <Filter>include\Main Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MainMenuBtnLayer.h">
-      <Filter>include\Main Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MainMenuScene.h">
-      <Filter>include\Main Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameScene.h">
-      <Filter>include\Game Play</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\GameBGLayer.h">
-      <Filter>include\Game Play</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameUILayer.h">
-      <Filter>include\Game Play</Filter>
+      <Filter>source\Game Play</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameMidLayer.h">
-      <Filter>include\Game Play</Filter>
+      <Filter>source\Game Play</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\AbstractCharacter.h">
-      <Filter>include\Objects</Filter>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>source\Game Play</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Player.h">
-      <Filter>include\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Bullet.h">
-      <Filter>include\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\BulletPool.h">
-      <Filter>include\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Enemy.h">
-      <Filter>include\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameOverScene.h">
-      <Filter>include\Game Over</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameOverBtnLayer.h">
-      <Filter>include\Game Over</Filter>
+    <ClInclude Include="..\Classes\GameUILayer.h">
+      <Filter>source\Game Play</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameOverBGLayer.h">
-      <Filter>include\Game Over</Filter>
+      <Filter>source\Game Over</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOverBtnLayer.h">
+      <Filter>source\Game Over</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOverScene.h">
+      <Filter>source\Game Over</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainMenuBGLayer.h">
+      <Filter>source\Main Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainMenuBtnLayer.h">
+      <Filter>source\Main Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainMenuScene.h">
+      <Filter>source\Main Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Constants.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameManager.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AbstractCharacter.h">
+      <Filter>source\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Bullet.h">
+      <Filter>source\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BulletPool.h">
+      <Filter>source\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Enemy.h">
+      <Filter>source\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Player.h">
+      <Filter>source\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

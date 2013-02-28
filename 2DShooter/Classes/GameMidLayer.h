@@ -1,14 +1,18 @@
 #ifndef __GAME_MID_LAYER_H_
 #define __GAME_MID_LAYER_H_
 
+#include "chipmunk.h"
 #include "cocos2d.h"
-#include "Player.h"
+#include "cocos-ext.h"
+
+#include "GameManager.h"
 #include "GameUILayer.h"
+#include "Player.h"
 #include "BulletPool.h"
 #include "Enemy.h"
-#include "GameManager.h"
 
-USING_NS_CC;
+
+USING_NS_CC_EXT;
 
 #define TRANSITION_DURATION 1.2f 
 
@@ -26,6 +30,10 @@ public:
 	/* Initialise layer
 	*/
 	bool init();
+
+	/* Init chipmunk world space
+	*/
+	void createSpace();
 
 	/* When layer is added
 	*/
@@ -92,6 +100,10 @@ private:
 	*/
 	CC_SYNTHESIZE(GameUILayer*, UILayer, UILayer);
 
+	/* Chipmunk stuff
+	*/
+	CC_SYNTHESIZE(cpSpace*, m_pSpace, m_pSpace);
+	CCPhysicsDebugNode* m_debugNode;
 };	
 
 #endif;

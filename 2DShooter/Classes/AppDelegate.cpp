@@ -4,6 +4,7 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 #include "GameManager.h"
+#include "chipmunk.h"
 
 using namespace CocosDenshion;
 
@@ -29,6 +30,9 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
+
+	// init physics
+	cpInitChipmunk();
 
     // create a scene. it's an autorelease object
 	GameManager::SharedGameManager().runSceneWithID(SCENE_ID_MAINMENU);

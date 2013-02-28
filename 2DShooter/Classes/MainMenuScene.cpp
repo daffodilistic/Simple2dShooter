@@ -1,4 +1,5 @@
 #include "MainMenuScene.h"
+#include "SimpleAudioEngine.h"
 
 MainMenuScene::MainMenuScene()
 {
@@ -18,7 +19,10 @@ bool MainMenuScene::init()
 		CC_BREAK_IF(!CCScene::init());
 		// Add layers here
 		this->addChild(MainMenuBGLayer::create(), 0);
-		this->addChild(MainMenuBtnLayer::create(), 1);
+		//this->addChild(MainMenuBtnLayer::create(), 1);
+
+		//CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("PT_335090_lowres.mp3", true);
+
 		bRet = true;
 	} while (0);
 
