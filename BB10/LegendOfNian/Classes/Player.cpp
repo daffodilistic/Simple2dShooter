@@ -1,0 +1,87 @@
+#include "Player.h"
+
+Player::Player()
+{
+}
+
+Player::~Player()
+{
+}
+
+bool Player::init()
+{
+	state = CHAR_STATE_NONE;
+	hp = 5;
+	speed = 10.0f;
+	name = NULL;
+	moveaction = NULL;
+	points = 0;
+
+	return true;
+}
+
+void Player::changeState(CHAR_STATE _cstate)
+{
+	state = _cstate;
+
+	switch (state)
+	{
+		case CHAR_STATE_NONE:
+			break;
+		case CHAR_STATE_SPAWN:
+			break;
+		case CHAR_STATE_SHOOT:
+			break;
+		case CHAR_STATE_DEAD:
+			break;
+		default:
+			break;
+	}
+
+}
+
+Player*  Player::create(const char* _framename, CCSpriteBatchNode *_spritesheet,  CCAction *_anim)
+{
+	Player *player = new Player();
+
+	if (player && player->initCharacter(_framename, _spritesheet, _anim))
+    {
+		player->init(); // Initialise
+		player->autorelease(); // Set to autorelease
+        return player;
+    }
+
+    CC_SAFE_DELETE(player);
+	return NULL;
+}
+
+
+void Player::addPoints()
+{
+	points ++;
+}
+
+void Player::setMove(CCPoint _pos)
+{
+	/*
+	if(moveaction)
+	{
+		this->stopAction(moveaction);
+	}
+	*/
+
+	CCPoint currentpos = this->getPosition();
+	CCPoint movediff = ccpSub(_pos, currentpos);
+	float finaldest = ccpLength(movediff);
+	float moveDuration = speed / finaldest;
+
+	CCLog("Duration is %f",moveDuration);
+
+	//moveaction = CCMoveTo::actionWithDuration(moveDuration, _pos);
+	moveaction = CCMoveTo::create(3, _pos);
+	//moveaction->setTag(TAGS_ACTION::ACTION_MOVE);
+
+	//this->stopActionByTag(TAGS_ACTION::ACTION_MOVE);
+	this->runAction(moveaction);
+
+}
